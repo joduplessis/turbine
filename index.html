@@ -1,0 +1,174 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>turbine</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <!-- <link rel="stylesheet" href="termynal.css"> -->
+    <style>
+      body {
+          --color-bg: #ddd;
+          --color-text: #1a1e24;
+          --color-text-subtle: #FE0287;
+
+          padding: 0; margin: 0;
+          width: 100%;
+          min-height: 100vh;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          margin: 0px;
+          padding: 0px;
+      }
+
+      :root {
+          --color-bg: #252a33;
+          --color-text: #eee;
+          --color-text-subtle: #a2a2a2;
+      }
+
+      [data-termynal] {
+          width: 1000px;
+          max-width: 100%;
+          color: var(--color-text);
+          font-size: 13px;
+          font-family: 'Fira Mono', Consolas, Menlo, Monaco, 'Courier New', Courier, monospace;
+          border-radius: 4px;
+          padding: 75px 45px 35px;
+          position: relative;
+          -webkit-box-sizing: border-box;
+                  box-sizing: border-box;
+      }
+
+      [data-ty] {
+          display: block;
+          line-height: 2;
+      }
+
+      [data-ty]:before {
+          /* Set up defaults and ensure empty lines are displayed. */
+          content: '';
+          display: inline-block;
+          vertical-align: middle;
+      }
+
+      [data-ty="input"]:before,
+      [data-ty-prompt]:before {
+          margin-right: 0.75em;
+          color: var(--color-text-subtle);
+      }
+
+      [data-ty="input"]:before {
+          content: '$';
+      }
+
+      [data-ty][data-ty-prompt]:before {
+          content: attr(data-ty-prompt);
+      }
+
+      [data-ty-cursor]:after {
+          content: attr(data-ty-cursor);
+          color: var(--color-text-subtle);
+          font-family: monospace;
+          margin-left: 0.5em;
+          -webkit-animation: blink 1s infinite;
+                  animation: blink 1s infinite;
+      }
+
+
+      /* Cursor animation */
+
+      @-webkit-keyframes blink {
+          50% {
+              opacity: 0;
+          }
+      }
+
+      @keyframes blink {
+          50% {
+              opacity: 0;
+          }
+      }
+
+      .logo {
+        position: absolute;
+        left: 20px;
+        top: 30px;
+        width: 40px;
+        height: 40px;
+      }
+
+      .tb {
+        color: var(--color-text-subtle);
+        width: 20px;
+        display: inline-block;
+      }
+
+      svg.logo path, svg.logo circle {
+        fill: var(--color-text-subtle);
+      }
+
+      .button {
+        background: var(--color-text-subtle);
+        color: white;
+        text-transform: uppercase;
+        font-family: lores-9-wide, sans-serif;
+        font-weight: bold;
+        font-size: 10px;
+        padding: 10px 15px 10px 15px;
+        position: relative;
+        border-radius: 3px;
+        margin-left: 10px;
+        position: absolute;
+        right: 25px;
+        cursor: pointer;
+        top: 25px;
+        text-decoration: none;
+      }
+
+      .button:hover {
+        opacity: 0.8;
+      }
+    </style>
+    <script src="termynal.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <a href="https://confirmsubscription.com/h/t/0FC676813EB845A9" target="_blank" class="button">Find out when we launch</a>
+
+    <svg width="50" class="logo" height="50" viewBox="0 0 76 125" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+        <g transform="matrix(1,0,0,1,-12.359,1.551)">
+            <g>
+                <path d="M50.186,-1.551C29.295,-1.551 12.359,15.385 12.359,36.276C12.359,57.167 29.295,74.103 50.186,74.103C71.077,74.103 88.014,57.167 88.014,36.275C88.014,15.384 71.077,-1.551 50.186,-1.551ZM74.805,60.313C73.29,60.355 71.748,60.243 70.198,59.953C65.373,59.048 61.231,56.595 58.179,53.209C60.813,57.831 65.117,61.519 70.585,63.266C70.833,63.346 71.081,63.414 71.327,63.483C63.302,69.843 52.765,72.365 42.681,70.246C38.566,62.115 38.501,52.138 43.398,43.657C45.058,40.781 47.153,38.316 49.551,36.29C43.494,35.358 37.091,36.4 31.371,39.703C25.778,42.932 21.727,47.806 19.471,53.36C18.152,51.008 17.142,48.566 16.418,46.08C17.138,44.747 18.006,43.468 19.035,42.269C22.23,38.544 26.426,36.182 30.884,35.233C25.564,35.202 20.218,37.088 15.971,40.949C15.779,41.122 15.596,41.303 15.413,41.482C13.918,31.352 17.003,20.968 23.88,13.294C32.979,13.795 41.652,18.729 46.547,27.209C48.229,30.12 49.324,33.206 49.874,36.335C49.808,36.324 49.742,36.317 49.676,36.307C51.879,42.104 56.016,47.209 61.804,50.552C67.397,53.782 73.644,54.852 79.583,54.028C78.205,56.349 76.596,58.442 74.805,60.313ZM59.522,37.981C56.16,37.981 52.94,37.387 49.956,36.298C53.913,31.48 56.29,25.313 56.29,18.591C56.29,12.133 54.095,6.188 50.412,1.457C53.108,1.491 55.728,1.837 58.243,2.453C59.038,3.744 59.711,5.135 60.235,6.623C61.864,11.255 61.811,16.068 60.403,20.403C63.09,15.811 64.131,10.238 62.91,4.63C62.855,4.377 62.791,4.128 62.727,3.879C72.247,7.649 79.698,15.514 82.906,25.305C77.922,32.936 69.314,37.981 59.522,37.981Z" style="fill-rule:nonzero;"/>
+                <path d="M49.638,36.212C49.609,36.237 49.58,36.264 49.552,36.289C49.593,36.295 49.635,36.3 49.677,36.307C49.664,36.275 49.65,36.245 49.638,36.212Z" style="fill-rule:nonzero;"/>
+                <circle cx="50.407" cy="36.249" r="5.566" />
+                <path d="M47.638,41.071C48.024,39.318 48.908,37.753 50.13,36.524C52.126,35.999 53.859,34.828 55.091,33.248C54.478,32.295 53.586,31.54 52.528,31.103C52.233,33.115 51.296,34.913 49.925,36.29C48.214,36.74 46.697,37.666 45.523,38.916C46.015,39.816 46.75,40.561 47.638,41.071Z" style="fill-rule:nonzero;"/>
+            </g>
+        </g>
+    </svg>
+
+    <div id="termynal" data-termynal data-termynal data-ty-typeDelay="40" data-ty-lineDelay="2000">
+      <span data-ty="input">brew install turbine</span>
+      <span data-ty="progress"></span>
+      <span data-ty>Successfully installed turbine</span>
+      <span data-ty></span>
+      <span data-ty="input">turbine start:mongodb --app=awesome-foo --replicaSet=3</span>
+      <span data-ty="progress"></span>
+      <span data-ty>Created MongoDB replica set <strong>awesome-foo</strong></span>
+      <span data-ty></span>
+      <span data-ty="input">turbine backup:restore --app=awesome-foo --backup=XKWJ23WD</span>
+      <span data-ty="progress"></span>
+      <span data-ty>Backup <strong>XKWJ23WD</strong> has just been restored to <strong>awesome-foo</strong> 🚀</span>
+      <span data-ty="input">turbine view:config --app=awesome-foo</span>
+      <span data-ty><span class="tb">▲</span><strong>username:</strong> awesomeFoo</span>
+      <span data-ty><span class="tb">▲</span><strong>password:</strong> Jwu0QXUho#i$</span>
+      <span data-ty><span class="tb">▲</span><strong>hosts:</strong> db1.turbine.sh,db2.turbine.sh,db3.turbine.sh</span>
+      <span data-ty><span class="tb">▲</span><strong>replicaSet:</strong> awesomeFooReplicaSet</span>
+      <span data-ty><span class="tb">▲</span><strong>connection string:</strong> mongodb://awesomeFoo:Jwu0QXUho#i$@db1.turbine.sh,db2.turbine.sh,db3.turbine.sh:27017/?replicaSet=awesomeFooReplicaSet</span>
+    </div>
+
+    <script>
+      var termynal = new Termynal('#termynal');
+    </script>
+  </body>
+</html>
